@@ -8,7 +8,7 @@ if(isset($resultats)){
 	$ligne=$resultats->fetch();
 	$_SESSION['IDUser']=$ligne['IDVisiteurs'];
 	$_SESSION['LoginUser']=$ligne['Login'];
-	$_SESSION['NomPrenom']=$ligne['Nom']." ".=$ligne['Prenom'];;
+	$_SESSION['NomPrenom']=($ligne['Nom']." ".$ligne['Prenom']);
 }
 ?>
 

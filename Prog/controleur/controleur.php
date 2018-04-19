@@ -15,6 +15,7 @@ function vueConnexion(){
 }
 
 function vueHomepage(){
+	$Coordresultats = getCoordAbris();
 	require 'view/Homepage.php';
 }
 
@@ -23,7 +24,19 @@ function vueAddAbris(){
 }
 
 function vueEditAbris(){
-	require 'view/Editabris.php';
+	if(isset($_GET['fIDAbris'])){
+		$resultats = getAbris($_GET['fIDAbris']);
+		require 'view/Editabris.php';
+		exit();
+	} else{
+		updAbris($_POST);
+		require 'view/Editabris.php';
+	}
+}
+
+function vuePublipostage(){
+	$Visiteursresultats = getVisiteurs();
+	require 'view/Publipostage.php';
 }
 
 // Affichage des erreurs

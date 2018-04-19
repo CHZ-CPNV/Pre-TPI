@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  ven. 09 mars 2018 à 12:53
+-- Généré le :  jeu. 19 avr. 2018 à 09:18
 -- Version du serveur :  5.6.38
 -- Version de PHP :  7.2.1
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `Pre-TPI`
+-- Base de données :  `tpi`
 --
 
 -- --------------------------------------------------------
@@ -33,18 +33,20 @@ CREATE TABLE `Abris` (
   `Ville` varchar(30) COLLATE utf8_bin NOT NULL,
   `NPA` smallint(5) NOT NULL,
   `NombrePlace` tinyint(5) NOT NULL,
-  `N°abris` varchar(30) COLLATE utf8_bin NOT NULL
+  `NumAbris` varchar(30) COLLATE utf8_bin NOT NULL,
+  `Lat` float NOT NULL,
+  `Lng` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `Abris`
 --
 
-INSERT INTO `Abris` (`IDAbris`, `Etat`, `Rue`, `Ville`, `NPA`, `NombrePlace`, `N°abris`) VALUES
-(1, 'Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.', 'Tramstrasse 11', 'Berneck', 9442, 120, 'PC_A280'),
-(2, 'Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.', 'Chemin d\'Otan 5', 'Vernayaz', 1904, 80, 'PC_A180'),
-(3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta gravida at eget metus. Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae elit libero, a pharetra augue.', 'Wiesenweg 2', 'Zoug', 6300, 120, 'PC_AB280'),
-(8, 'Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper.', 'Via Muggina 13', 'Lugano', 6962, 80, 'PC_AB180');
+INSERT INTO `Abris` (`IDAbris`, `Etat`, `Rue`, `Ville`, `NPA`, `NombrePlace`, `NumAbris`, `Lat`, `Lng`) VALUES
+(1, 'Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.', 'Tramstrasse 11', 'Berneck', 9442, 120, 'PC_A280', 47.4249, 9.61528),
+(2, 'Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.', 'Chemin d\'Otan 5', 'Vernayaz', 1904, 80, 'PC_A180', 46.137, 7.04095),
+(3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta gravida at eget metus. Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae elit libero, a pharetra augue.', 'Wiesenweg 2', 'Zoug', 6300, 120, 'PC_AB280', 47.1781, 8.52103),
+(8, 'Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper.', 'Via Muggina 13', 'Lugano', 6962, 80, 'PC_AB180', 46.0114, 8.96553);
 
 -- --------------------------------------------------------
 
@@ -81,36 +83,38 @@ CREATE TABLE `Visite` (
 CREATE TABLE `Visiteurs` (
   `IDVisiteurs` int(11) NOT NULL,
   `Nom` varchar(30) COLLATE utf8_bin NOT NULL,
-  `Prenom` varchar(30) COLLATE utf8_bin NOT NULL
+  `Prenom` varchar(30) COLLATE utf8_bin NOT NULL,
+  `Login` varchar(40) COLLATE utf8_bin NOT NULL,
+  `Password` varchar(60) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `Visiteurs`
 --
 
-INSERT INTO `Visiteurs` (`IDVisiteurs`, `Nom`, `Prenom`) VALUES
-(1, 'Auboisdormant', 'Abel'),
-(2, 'Troijours', 'Adam'),
-(3, 'Aubois', 'Abdel'),
-(4, 'Thévenaz', 'Armand'),
-(5, 'Térieur', 'Alain'),
-(6, 'Verse', 'Alain'),
-(7, 'Tagère', 'Alain'),
-(8, 'Versace', 'Alain'),
-(9, 'Naline', 'André'),
-(10, 'Hyère', 'Claire'),
-(11, 'Mottay', 'Gwen'),
-(12, 'Odin', 'Thor'),
-(13, 'Dyossi', 'Daisy'),
-(14, 'Chon', 'Denis'),
-(15, 'Dormi', 'Djamal'),
-(16, 'Honnête', 'Camille'),
-(17, 'Diossi', 'Kelly'),
-(18, 'Di-Domenico', 'Tiff'),
-(19, 'Shouwey', 'Zaid'),
-(20, 'Berney', 'Alec'),
-(21, 'Premium', 'Flip'),
-(22, 'Time', 'Vincent');
+INSERT INTO `Visiteurs` (`IDVisiteurs`, `Nom`, `Prenom`, `Login`, `Password`) VALUES
+(1, 'Auboisdormant', 'Abel', '', ''),
+(2, 'Troijours', 'Adam', '', ''),
+(3, 'Aubois', 'Abdel', '', ''),
+(4, 'Thévenaz', 'Armand', '', ''),
+(5, 'Térieur', 'Alain', '', ''),
+(6, 'Verse', 'Alain', '', ''),
+(7, 'Tagère', 'Alain', '', ''),
+(8, 'Versace', 'Alain', '', ''),
+(9, 'Naline', 'André', '', ''),
+(10, 'Hyère', 'Claire', '', ''),
+(11, 'Mottay', 'Gwen', '', ''),
+(12, 'Odin', 'Thor', '', ''),
+(13, 'Dyossi', 'Daisy', '', ''),
+(14, 'Chon', 'Denis', '', ''),
+(15, 'Dormi', 'Djamal', '', ''),
+(16, 'Honnête', 'Camille', '', ''),
+(17, 'Diossi', 'Kelly', '', ''),
+(18, 'Di-Domenico', 'Tiff', '', ''),
+(19, 'Shouwey', 'Zaid', '', ''),
+(20, 'Berney', 'Alec', '', ''),
+(21, 'Premium', 'Flip', '', ''),
+(22, 'Time', 'Vincent', '', '');
 
 --
 -- Index pour les tables déchargées

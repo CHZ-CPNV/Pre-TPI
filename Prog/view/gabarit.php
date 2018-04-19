@@ -75,8 +75,8 @@
 						  <ul>
 						    <li><select><option>Régions</option></select></li>
 						    <li class="yellow"><a href="#">Commune:</a><select><option>Commune</option></select></li>
-						    <li class="purple"> <a href="#">Sith</a></li>
-						    <li class="green"><a href="#">Ajouter un abris</a></li>
+						    <li class="purple"> <a href="index.php?action=editAbris">Modifier un abris</a></li>
+						    <li class="green"><a href="index.php?action=publipostage">Publipostage</a></li>
 						    <li class="red"><a href="#">Supprimer un abris</a></li>
 						  </ul>
 						</nav>
@@ -84,58 +84,11 @@
 				</div>
 		  </div>
 		</header>
+
 		<!-- END: header -->
 	  <!--CONTENU ICI....................................................................................-->
 	  <?= $content ?>
 	  <!--FIN CONTENU....................................................................................-->
-
-
-		<!-- <section id="work">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3">
-						<div class="fh5co-grid animate-box" style="background-image: url(images/work-6.jpg);">
-							<a class="image-popup text-center" href="#">
-								<div class="work-title">
-									<h3>Don’t Just Stand There</h3>
-									<span>Illustration, Print</span>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="fh5co-grid animate-box" style="background-image: url(images/work-6.jpg);">
-							<a class="image-popup text-center" href="#">
-								<div class="work-title">
-									<h3>Don’t Just Stand There</h3>
-									<span>Illustration, Print</span>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="fh5co-grid animate-box" style="background-image: url(images/work-6.jpg);">
-							<a class="image-popup text-center" href="#">
-								<div class="work-title">
-									<h3>Don’t Just Stand There</h3>
-									<span>Illustration, Print</span>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="fh5co-grid animate-box" style="background-image: url(images/work-6.jpg);">
-							<a class="image-popup text-center" href="#">
-								<div class="work-title">
-									<h3>Don’t Just Stand There</h3>
-									<span>Illustration, Print</span>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			<div>
-		</section> -->
 
 		<footer id="footer" role="contentinfo">
 			<div class="container">

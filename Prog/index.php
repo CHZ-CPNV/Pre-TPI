@@ -25,6 +25,9 @@ try
 			case 'editAbris':
 				vueEditAbris();
 				break;
+			case 'publipostage':
+				vuePublipostage();
+				break;
 			default:
 				throw new Exception("Page non valide");
 		}
